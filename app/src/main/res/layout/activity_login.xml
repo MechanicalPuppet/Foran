@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@color/salmon"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imgloginLogo"
+            android:layout_width="190dp"
+            android:layout_height="157dp"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/icono" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="323dp"
+        android:layout_height="427dp"
+        android:layout_marginBottom="52dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/verdeLimoncito"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvIniciarSesion"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-black"
+            android:textSize="25dp"
+
+            android:text="Iniciar sesión" />
+
+        <EditText
+            android:id="@+id/txtUsuario"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/round_editext"
+            android:textAlignment="center"
+            android:text="Usuario"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/contraseña"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textAlignment="center"
+            android:background="@drawable/round_editext"
+            android:ems="10"
+            android:layout_gravity="center"
+            android:inputType="textPassword"
+            android:text="Contraseña"
+            android:textSize="25dp" />
+        <TextView
+            android:id="@+id/tvOlvideContraseña"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="sans-serif-black"
+            android:text="Olvidé mi contraseña"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            />
+
+        <Button
+            android:id="@+id/btnIniciarSesion"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/round_editext"
+            android:fontFamily="sans-serif-black"
+            android:text="Iniciar sesión"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tvRegistrarme"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Registrarme"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center_horizontal"
+            />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

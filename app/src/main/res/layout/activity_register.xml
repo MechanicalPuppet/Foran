@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@color/salmon"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="190dp"
+            android:layout_height="157dp"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/icono" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="323dp"
+        android:layout_height="427dp"
+        android:layout_marginBottom="52dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/verdeLimoncito"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-black"
+            android:textSize="25dp"
+
+            android:text="Crea tu cuenta" />
+
+        <EditText
+            android:id="@+id/txtUsuarioRegister"
+            android:textColor="@color/gris"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+
+            android:background="@drawable/round_editext"
+            android:hint="    Usuario"
+
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/txtEmailRegister"
+            android:textColor="@color/gris"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_editext"
+            android:hint="    Email"
+
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/contraseña"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="10dp"
+
+            android:background="@drawable/round_editext"
+            android:ems="10"
+            android:layout_gravity="center"
+            android:inputType="textPassword"
+            android:hint="    Contraseña"
+
+            android:fontFamily="sans-serif-black"
+
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btnRegistrarme"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/round_editext"
+            android:fontFamily="sans-serif-black"
+            android:text="Registrarme"
+            android:textColor="@color/black" />
+
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_buttonfb"
+            android:fontFamily="sans-serif-black"
+            android:text="Facebook"
+            android:textColor="@color/azul" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
