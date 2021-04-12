@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".RegisterActivity">
+    tools:context=".ProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,12 +18,36 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/backMenu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/abc_vector_test"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <ImageView
             android:layout_width="190dp"
             android:layout_height="157dp"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
             app:srcCompat="@drawable/icono" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="-20dp"
+            android:layout_marginLeft="240dp"
+            android:src="@drawable/round_gray"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Editar foto de perfil"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
 
     </LinearLayout>
 
@@ -38,75 +62,77 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:fontFamily="sans-serif-black"
-            android:text="Crea tu cuenta"
+            android:text="Crea tu perfil"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="25dp" />
 
         <EditText
-            android:id="@+id/txtUsuarioRegister"
+            android:id="@+id/txtNombre"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/round_editext"
+            android:fontFamily="sans-serif-black"
+            android:hint="Nombre"
+            android:textColor="@color/gris"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/txtInfo"
             android:layout_width="250dp"
             android:layout_height="39dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:background="@drawable/round_editext"
             android:fontFamily="sans-serif-black"
-            android:hint="    Usuario"
+            android:hint="Info"
             android:textColor="@color/gris"
+            android:textAlignment="center"
             android:textSize="20dp" />
 
-        <EditText
-            android:id="@+id/txtEmailRegister"
-            android:layout_width="250dp"
-            android:layout_height="39dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/round_editext"
-            android:fontFamily="sans-serif-black"
-            android:hint="    Email"
-            android:textColor="@color/gris"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/contraseña"
-            android:layout_width="250dp"
-            android:layout_height="39dp"
-            android:layout_gravity="center"
-
-            android:layout_marginTop="10dp"
-            android:background="@drawable/round_editext"
-            android:ems="10"
-            android:fontFamily="sans-serif-black"
-            android:hint="    Contraseña"
-            android:inputType="textPassword"
-            android:textColor="@color/gris"
-            android:textSize="20dp" />
 
         <Button
-            android:id="@+id/btnRegistrarme"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
+            android:id="@+id/btnGuardarPerfil"
+            android:layout_width="180dp"
+            android:layout_height="33dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:background="@drawable/round_editext"
             android:fontFamily="sans-serif-black"
-            android:text="Registrarme"
+            android:text="Guardar"
+            android:textSize="12sp"
             android:textColor="@color/black" />
 
         <Button
-            android:layout_width="160dp"
-            android:layout_height="40dp"
+            android:id="@+id/btnCerrarSesion"
+            android:layout_width="180dp"
+            android:layout_height="33dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/round_buttonfb"
+            android:background="@drawable/round_editext"
             android:fontFamily="sans-serif-black"
-            android:text="Facebook"
-            android:textColor="@color/azul" />
+            android:text="Cerrar Sesion"
+            android:textSize="12sp"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnEliminarCuenta"
+            android:layout_width="180dp"
+            android:layout_height="33dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/round_editext"
+            android:fontFamily="sans-serif-black"
+            android:text="Eliminar Cuenta"
+            android:textSize="12sp"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 

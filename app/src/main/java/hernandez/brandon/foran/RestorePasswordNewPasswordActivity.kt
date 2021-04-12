@@ -15,8 +15,6 @@ class RestorePasswordNewPasswordActivity : AppCompatActivity() {
         btnGuardarRPNP.setOnClickListener {
             var intent: Intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-
         }
-
     }
 }

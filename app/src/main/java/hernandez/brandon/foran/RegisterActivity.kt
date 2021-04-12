@@ -12,15 +12,10 @@ class RegisterActivity : AppCompatActivity() {
 
         var btnRegistrarme: Button = findViewById(R.id.btnRegistrarme)
 
-
-        /**
         btnRegistrarme.setOnClickListener {
-            var intent:Intent = Intent(this, CLASEDEHUERTA::class.java)
+            var intent: Intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
-
-
         }
-        */
 
     }
 }

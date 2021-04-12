@@ -17,22 +17,18 @@ class LoginActivity : AppCompatActivity() {
         var tvRegistrarme: TextView = findViewById(R.id.tvRegistrarme)
 
         tvOlvideContrasena.setOnClickListener {
-            var intent: Intent = Intent(this, RestorePasswordActivity:: class.java)
+            var intent: Intent = Intent(this, RestorePasswordActivity::class.java)
             startActivity(intent)
         }
 
-        /**
         btnIniciarSesion.setOnClickListener {
-            var intent: Intent = Intent(this, AQUÍVALAACTIVITYDEWERTA::class.java)
+            var intent: Intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
-
-        **/
 
         tvRegistrarme.setOnClickListener {
             var intent: Intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

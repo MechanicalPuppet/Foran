@@ -3,30 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".LoadingActivity">
-
 
     <ImageView
         android:id="@+id/imgLoading"
         android:layout_width="match_parent"
         android:layout_height="347dp"
-        android:clickable="true"
-        android:focusable="true"
         android:layout_gravity="center"
         android:layout_marginTop="150dp"
+        android:clickable="true"
+        android:focusable="true"
         app:srcCompat="@drawable/logo_foran" />
 
     <TextView
         android:id="@+id/tvLoading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:fontFamily="sans-serif-black"
-        android:textSize="30dp"
+        android:text="Ni de aquí ni de allá"
+        android:textAlignment="center"
         android:textColor="@color/black"
+        android:textSize="30dp" />
 
-        android:text="Ni de aquí ni de allá" />
-
-    </LinearLayout>
+</LinearLayout>

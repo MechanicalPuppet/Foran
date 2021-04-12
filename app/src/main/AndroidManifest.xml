@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Foran">
-        <activity android:name=".RestorePasswordNewPasswordActivity"></activity>
+        <activity
+            android:name=".TransportActivity"
+            android:label="@string/title_activity_transport"
+            android:theme="@style/Theme.Foran.NoActionBar"></activity>
+        <activity android:name=".UbicationActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".RestorePasswordNewPasswordActivity" />
         <activity android:name=".RestorePasswordCodeActivity" />
         <activity android:name=".RestorePasswordActivity" />
         <activity android:name=".RegisterActivity" />

@@ -13,11 +13,8 @@ class RestorePasswordActivity : AppCompatActivity() {
         var btnEnviar: Button = findViewById(R.id.btnEnviar)
 
         btnEnviar.setOnClickListener {
-           var intent: Intent = Intent(this, RestorePasswordCodeActivity::class.java)
+            var intent: Intent = Intent(this, RestorePasswordCodeActivity::class.java)
             startActivity(intent)
         }
-
-
-
     }
 }
