@@ -83,7 +83,7 @@
                 android:layout_column="2"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="40dp"
-                android:background="@drawable/Hospital"
+                android:background="@drawable/hospita"
                 android:clickable="true"
                 android:focusable="true" />
 
@@ -95,7 +95,7 @@
                 android:layout_column="3"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="40dp"
-                android:background="@drawable/Entertainment"
+                android:background="@drawable/entertainmen"
                 android:clickable="true"
                 android:focusable="true" />
         </GridLayout>
