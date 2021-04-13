@@ -9,15 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Foran">
+        <activity android:name=".RecipeDetail"></activity>
+        <activity android:name=".DetailRecipe" />
+        <activity android:name=".RecipesActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"/>
+            android:value="@string/google_maps_key" />
 
         <activity
             android:name=".TransportActivity"
             android:label="@string/title_activity_transport"
-            android:theme="@style/Theme.Foran.NoActionBar"></activity>
+            android:theme="@style/Theme.Foran.NoActionBar" />
         <activity android:name=".UbicationActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MenuActivity" />

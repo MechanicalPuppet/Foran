@@ -15,6 +15,8 @@ class MenuActivity : AppCompatActivity() {
         var btnCerrarSesion: Button = findViewById(R.id.btnCerrarSesionMenu)
         var imgLocation: ImageView = findViewById(R.id.ImgUbicaciones)
         var imgTransportation: ImageView = findViewById(R.id.ImgTransportes)
+        var imgRecetas: ImageView = findViewById(R.id.imgRecetas)
+
 
         foranApp.setOnClickListener {
             var intent: Intent = Intent(this, ProfileActivity::class.java)
@@ -33,6 +35,11 @@ class MenuActivity : AppCompatActivity() {
 
         imgTransportation.setOnClickListener {
             var intent: Intent = Intent(this, TransportActivity::class.java)
+            startActivity(intent)
+        }
+
+        imgRecetas.setOnClickListener{
+            var intent: Intent = Intent(this, RecipesActivity::class.java)
             startActivity(intent)
         }
     }
