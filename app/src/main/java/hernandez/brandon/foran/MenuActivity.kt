@@ -16,6 +16,7 @@ class MenuActivity : AppCompatActivity() {
         var imgLocation: ImageView = findViewById(R.id.ImgUbicaciones)
         var imgTransportation: ImageView = findViewById(R.id.ImgTransportes)
         var imgRecetas: ImageView = findViewById(R.id.imgRecetas)
+        var imgForo: ImageView = findViewById(R.id.ImgForo)
 
 
         foranApp.setOnClickListener {
@@ -40,6 +41,11 @@ class MenuActivity : AppCompatActivity() {
 
         imgRecetas.setOnClickListener{
             var intent: Intent = Intent(this, RecipesActivity::class.java)
+            startActivity(intent)
+        }
+
+        imgForo.setOnClickListener{
+            var intent: Intent = Intent(this, ForumActivity::class.java)
             startActivity(intent)
         }
     }
