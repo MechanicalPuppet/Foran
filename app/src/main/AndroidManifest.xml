@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Foran">
-        <activity android:name=".ForumPosts"></activity>
+        <activity android:name=".DeleteProfileActivity"></activity>
+        <activity android:name=".ForumPosts" />
         <activity android:name=".ForumActivity" />
         <activity android:name=".RecipeDetail" />
         <activity android:name=".DetailRecipe" />

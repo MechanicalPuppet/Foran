@@ -13,6 +13,7 @@ class ProfileActivity : AppCompatActivity() {
 
         var imgback: ImageView = findViewById(R.id.backMenu)
         var btnCerrarSesion: Button = findViewById(R.id.btnCerrarSesion)
+        var btnEliminarCuenta: Button = findViewById(R.id.btnEliminarCuenta)
         /* Variable a la pantalla del Arturito */
 
         imgback.setOnClickListener {
@@ -22,6 +23,11 @@ class ProfileActivity : AppCompatActivity() {
 
         btnCerrarSesion.setOnClickListener {
             var intent: Intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnEliminarCuenta.setOnClickListener{
+            var intent: Intent = Intent(this, DeleteProfileActivity::class.java)
             startActivity(intent)
         }
 
