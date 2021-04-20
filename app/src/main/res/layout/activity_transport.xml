@@ -48,7 +48,7 @@
         android:layout_height="600dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="@color/salmon"
+        android:background="@drawable/second_gradient"
         android:orientation="vertical">
 
         <TextView

@@ -8,11 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Foran">
+        android:theme="@style/Theme.Foran.NoActionBar">
         <activity android:name=".DeleteProfileActivity"></activity>
         <activity android:name=".ForumPosts" />
         <activity android:name=".ForumActivity" />
-        <activity android:name=".RecipeDetail" />
         <activity android:name=".DetailRecipe" />
         <activity android:name=".RecipesActivity" />
 
@@ -35,7 +34,7 @@
         <activity android:name=".LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

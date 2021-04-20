@@ -30,7 +30,7 @@
         android:layout_height="600dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:background="@color/verdeLimoncito"
+        android:background="@drawable/gradient"
         android:orientation="vertical">
 
         <TextView

@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:background="@color/salmon"
+        android:background="@drawable/second_gradient"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
         android:layout_width="323dp"
         android:layout_height="427dp"
         android:layout_marginBottom="52dp"
-        android:background="@color/verdeLimoncito"
+        android:background="@drawable/gradient"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
