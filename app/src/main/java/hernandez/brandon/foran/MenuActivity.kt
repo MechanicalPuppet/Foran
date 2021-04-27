@@ -5,11 +5,21 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
+        val bundle = intent.extras
+        if (bundle != null){
+            val nombre = bundle.get("nombre")
+            val correo = bundle.get("email")
+
+            tv_userName.setText(nombre.toString())
+            tv_userEmail.setText(correo.toString())
+        }
 
         var foranApp: ImageView = findViewById(R.id.ForanImg)
         var btnCerrarSesion: Button = findViewById(R.id.btnCerrarSesionMenu)

@@ -97,6 +97,13 @@
             android:text="Iniciar sesión"
             android:textColor="@color/black" />
 
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
         <TextView
             android:id="@+id/tvRegistrarme"
             android:clickable="true"
