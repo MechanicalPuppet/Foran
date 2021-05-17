@@ -50,7 +50,7 @@
             android:text="Iniciar sesión" />
 
         <EditText
-            android:id="@+id/txtUsuario"
+            android:id="@+id/txtCorreo"
             android:fontFamily="sans-serif-black"
             android:layout_width="250dp"
             android:layout_height="39dp"
@@ -58,7 +58,7 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/round_editext"
             android:textAlignment="center"
-            android:text="Usuario"
+            android:hint="Correo"
             android:textSize="20dp" />
 
         <EditText
@@ -70,8 +70,7 @@
             android:background="@drawable/round_editext"
             android:ems="10"
             android:layout_gravity="center"
-            android:inputType="textPassword"
-            android:text="Contraseña"
+            android:hint="Contraseña"
             android:textSize="25dp" />
         <TextView
             android:id="@+id/tvOlvideContraseña"

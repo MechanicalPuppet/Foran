@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "230407360105",
+    "project_id": "foran-ce598",
+    "storage_bucket": "foran-ce598.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230407360105:android:0310c5a5dd45a254f11cf8",
+        "android_client_info": {
+          "package_name": "hernandez.brandon.foran"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230407360105-kil3jbgq37ue4oljejighc9s763ue357.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hernandez.brandon.foran",
+            "certificate_hash": "182c231d99f49b98d258c52604e3dec262613519"
+          }
+        },
+        {
+          "client_id": "230407360105-feh919qpskvgp46ncpsv8sfq21j9n6gt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKU6AlNd1yx4_iQVXdYWxRJBgZta2YnXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230407360105-feh919qpskvgp46ncpsv8sfq21j9n6gt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
