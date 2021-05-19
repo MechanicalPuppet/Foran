@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".ForumPosts">
+    tools:context=".detallePost">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,34 +50,37 @@
         android:background="@drawable/second_gradient"
         android:orientation="vertical">
 
-        <GridLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:rowCount="1">
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/iv_forum_icon"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/rent"
-                />
+
 
             <TextView
-                android:id="@+id/tv_forum_title"
+                android:id="@+id/tv_titulo_publicacion_detalle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Titulo del foro"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="0dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="Titulo de la publicacion"
                 android:textColor="@color/white"
                 android:textSize="25dp"
-                android:textStyle="bold"
-                android:gravity="center"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/contenidoPostDetalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Este es el contenido de la publicacion"
+
                 />
-        </GridLayout>
+        </LinearLayout>
 
         <ListView
-            android:id="@+id/listview_forum"
+            android:id="@+id/listView_comentarios"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:numColumns="1"
