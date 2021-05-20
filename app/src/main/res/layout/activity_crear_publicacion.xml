@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".ForumPosts">
+    tools:context=".crearPublicacion">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_height="80dp">
 
             <ImageView
-                android:id="@+id/backForum"
+                android:id="@+id/back"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
@@ -67,7 +67,7 @@
                 android:id="@+id/tv_forum_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Titulo del foro"
+                android:text="Crear publicación"
                 android:layout_marginTop="15dp"
                 android:textColor="@color/white"
                 android:textSize="25dp"
@@ -76,24 +76,59 @@
                 />
         </GridLayout>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear publicación"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/et_Titulo"
+            android:fontFamily="sans-serif-black"
+            android:layout_width="250dp"
+            android:layout_height="39dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:textColorHint="@color/black"
+            android:background="@drawable/round_editext"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:hint="Título"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/et_contenido"
+            android:layout_width="250dp"
+            android:layout_height="319dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/round_editext"
+            android:fontFamily="sans-serif-black"
+            android:hint="contenido"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:maxLength="140"
+            android:maxLines="5"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+
         <Button
-            android:id="@+id/btnCrearPublicacion"
+            android:id="@+id/btnPublicar"
+            android:layout_marginTop="30dp"
             android:layout_width="180dp"
             android:layout_height="33dp"
             android:layout_gravity="center"
             android:background="@drawable/round_editext"
             android:fontFamily="sans-serif-black"
-            android:text="Crear publicación"
+            android:text="Publicar"
             android:textSize="12sp"
             android:textColor="@color/black" />
-
-        <ListView
-            android:id="@+id/listview_forum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numColumns="1"
-            />
-
 
     </LinearLayout>
 

@@ -35,6 +35,9 @@ class RegisterActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     //Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
+
+                    //INSERCION DE BD
+
                         Toast.makeText(baseContext, "${user?.email}Se ha creado correctamente", Toast.LENGTH_SHORT).show()
                     var intent: Intent = Intent(this, MenuActivity::class.java)
                     startActivity(intent)

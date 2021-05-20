@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Foran.NoActionBar">
-        <activity android:name=".detallePost"></activity>
+        <activity android:name=".CrearPublicacionActivity"></activity>
+        <activity
+            android:name=".crearPublicacion"
+            android:label="@string/title_activity_crear_publicacion"
+            android:theme="@style/Theme.Foran.NoActionBar.NoActionBar" />
+        <activity android:name=".detallePost" />
         <activity android:name=".DeleteProfileActivity" />
         <activity android:name=".ForumPosts" />
         <activity android:name=".ForumActivity" />
