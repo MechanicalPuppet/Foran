@@ -23,12 +23,12 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class ForumPosts : AppCompatActivity() {
+
     private lateinit var storage: FirebaseFirestore
     private lateinit var usuario: FirebaseAuth
     private var adaptador: AdaptadorPublicaciones? = null
 
-
-    companion object{
+    companion object {
         var allPubs = ArrayList<Publicacion>()
     }
 
@@ -40,43 +40,42 @@ class ForumPosts : AppCompatActivity() {
         allPubs = ArrayList()
         storage = FirebaseFirestore.getInstance()
 
-
         var listView: ListView = findViewById(R.id.listview_forum)
         var foranApp: ImageView = findViewById(R.id.ForanImg)
         var backMenu: ImageView = findViewById(R.id.backForum)
 
         val bundle = intent.extras
 
-        if (bundle != null){
+        if (bundle != null) {
             this.iv_forum_icon.setImageResource(bundle.getInt("icon"))
             this.tv_forum_title.setText(bundle.getString("title"))
-
         }
+
         var icon: Int = R.drawable.help
         var title: String = tv_forum_title.text.toString()
 
         agregarPublicaciones(title)
 
-        if (!allPubs.isEmpty()){
-            adaptador = AdaptadorPublicaciones(this,allPubs)
+        if (!allPubs.isEmpty()) {
+            adaptador = AdaptadorPublicaciones(this, allPubs)
             listview_forum.adapter = adaptador
         }
 
-        if (title.equals("Se vende/se compra")){
+        if (title.equals("Se vende/se compra")) {
             icon = R.drawable.sellbuy
-        }else if(title.equals("Eventos sociales")){
+        } else if (title.equals("Eventos sociales")) {
             icon = R.drawable.event
-        }else if(title.equals("Ayuda")){
+        } else if (title.equals("Ayuda")) {
             icon = R.drawable.help
-        }else if(title.equals("Consejos")){
+        } else if (title.equals("Consejos")) {
             icon = R.drawable.advice
-        }else if(title.equals("Departamentos/Casas en renta")){
+        } else if (title.equals("Departamentos/Casas en renta")) {
             icon = R.drawable.rent
         }
 
-        btnCrearPublicacion.setOnClickListener{
+        btnCrearPublicacion.setOnClickListener {
             var intent: Intent = Intent(this, CrearPublicacionActivity::class.java)
-            intent.putExtra("title",title )
+            intent.putExtra("title", title)
             intent.putExtra("icon", icon)
             startActivity(intent)
         }
@@ -87,46 +86,47 @@ class ForumPosts : AppCompatActivity() {
         }
 
         listView.setOnItemClickListener { parent, view, position, id ->
-
             var intent: Intent = Intent(this, detallePost::class.java)
-            intent.putExtra("publicacion" , listView.getItemAtPosition(position) as Serializable)
+            intent.putExtra("publicacion", listView.getItemAtPosition(position) as Serializable)
             startActivity(intent)
         }
+
         backMenu.setOnClickListener {
             var intent: Intent = Intent(this, ForumActivity::class.java)
             startActivity(intent)
         }
-
-
-
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun agregarPublicaciones(title: String){
+    fun agregarPublicaciones(title: String) {
 
         allPubs = ArrayList()
         storage = FirebaseFirestore.getInstance()
 
         storage.collection("publicacion")
-            .whereEqualTo("categoria", title )
+            .whereEqualTo("categoria", title)
             .get()
             .addOnSuccessListener {
 
-                it.forEach{
+                it.forEach {
+                    var comentarios: ArrayList<Comentario> =
+                        it.get("comentarios") as ArrayList<Comentario>
 
-                    var comentarios: ArrayList<Comentario> = it.get("comentarios") as ArrayList<Comentario>
-
-                    allPubs.add(Publicacion(it.id,
-                        it.getString("titulo")!!,
-                        it.getString("contenido")!!,
-                        it.getString("categoria")!!,
-                        comentarios))
+                    allPubs.add(
+                        Publicacion(
+                            it.id,
+                            it.getString("titulo")!!,
+                            it.getString("contenido")!!,
+                            it.getString("categoria")!!,
+                            comentarios
+                        )
+                    )
                 }
-                    adaptador = AdaptadorPublicaciones(this,allPubs)
-                    listview_forum.adapter = adaptador
+                adaptador = AdaptadorPublicaciones(this, allPubs)
+                listview_forum.adapter = adaptador
             }
-            .addOnFailureListener{
-                Toast.makeText(this,"failure",Toast.LENGTH_SHORT).show()
+            .addOnFailureListener {
+                Toast.makeText(this, "failure", Toast.LENGTH_SHORT).show()
             }
 
 /*
@@ -141,19 +141,17 @@ class ForumPosts : AppCompatActivity() {
         allPubs.add(Publicacion(2,usuario,"Plebes ayudenme", "Sólo quiero dormir", "Ayuda", comentarios, fecha ))
         allPubs.add(Publicacion(3,usuario,"Merezco dormir", "Por favor ayudenme, no quiero ser el que de ordenes aaaa", "Ayuda", comentarios, fecha ))
         allPubs.add(Publicacion(4,usuario,"Perdón", "Hasta yo me caigo mal, una disculpa.", "Ayuda", comentarios, fecha ))
-
          */
     }
-    private class AdaptadorPublicaciones: BaseAdapter {
+
+    private class AdaptadorPublicaciones : BaseAdapter {
         var publicaciones = ArrayList<Publicacion>()
         var contexto: Context? = null
 
-        constructor(contexto: Context, publicaciones1: ArrayList<Publicacion>){
+        constructor(contexto: Context, publicaciones1: ArrayList<Publicacion>) {
             this.publicaciones = publicaciones1
             this.contexto = contexto
         }
-
-
 
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {

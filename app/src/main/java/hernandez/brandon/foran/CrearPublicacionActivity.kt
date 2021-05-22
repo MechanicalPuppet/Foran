@@ -30,7 +30,7 @@ class CrearPublicacionActivity : AppCompatActivity() {
 
         val bundle = intent.extras
 
-        if (bundle != null){
+        if (bundle != null) {
             this.iv_forum_icon.setImageResource(bundle.getInt("icon"))
             this.tv_forum_title.setText(bundle.getString("title"))
         }
@@ -39,27 +39,26 @@ class CrearPublicacionActivity : AppCompatActivity() {
         var title: String = tv_forum_title.text.toString()
 
 
-        if (title.equals("Se vende/se compra")){
+        if (title.equals("Se vende/se compra")) {
             icon = R.drawable.sellbuy
-        }else if(title.equals("Eventos sociales")){
+        } else if (title.equals("Eventos sociales")) {
             icon = R.drawable.event
-        }else if(title.equals("Ayuda")){
+        } else if (title.equals("Ayuda")) {
             icon = R.drawable.help
-        }else if(title.equals("Consejos")){
+        } else if (title.equals("Consejos")) {
             icon = R.drawable.advice
-        }else if(title.equals("Departamentos/Casas en renta")){
+        } else if (title.equals("Departamentos/Casas en renta")) {
             icon = R.drawable.rent
         }
 
         back.setOnClickListener {
             var intent: Intent = Intent(this, ForumPosts::class.java)
-            intent.putExtra("title",title )
+            intent.putExtra("title", title)
             intent.putExtra("icon", icon)
             startActivity(intent)
         }
 
-        btnPublicar.setOnClickListener{
-
+        btnPublicar.setOnClickListener {
             val publicacion = hashMapOf(
                 "autor" to usuario.currentUser?.displayName,
                 "categoria" to title,
@@ -74,7 +73,7 @@ class CrearPublicacionActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     Toast.makeText(this, "publicacion agregada", Toast.LENGTH_SHORT).show()
                 }
-                .addOnFailureListener{
+                .addOnFailureListener {
                     Toast.makeText(this, "error: intente de nuevo", Toast.LENGTH_SHORT).show()
                 }
         }
