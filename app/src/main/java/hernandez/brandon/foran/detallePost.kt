@@ -12,7 +12,9 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_crear_publicacion.*
 import kotlinx.android.synthetic.main.activity_detalle_post.*
+import kotlinx.android.synthetic.main.activity_forum_posts.*
 import java.time.LocalDateTime
 
 class detallePost : AppCompatActivity() {
@@ -44,18 +46,37 @@ class detallePost : AppCompatActivity() {
             val publicacion = bundle.getSerializable("publicacion") as Publicacion
             tv_titulo_publicacion_detalle.setText(publicacion.titulo)
             contenidoPostDetalle.setText(publicacion.contenido)
+        }
 
-            var listView: ListView = findViewById(R.id.listaComentarios)
-            var adaptador: AdaptadorComentarios =
-                AdaptadorComentarios(this, publicacion.comentarios)
-            listView.adapter = adaptador
+
+        var icon: Int = R.drawable.help
+        var title: String = tv_titulo_publicacion_detalle.text.toString()
+
+        agregarPublicaciones(title)
+
+        if (!comentarios.isEmpty()){
+            adaptador = AdaptadorComentarios(this, comentarios)
+            listview_forum.adapter = adaptador
+        }
+
+        if (title.equals("Se vende/se compra")) {
+            icon = R.drawable.sellbuy
+        } else if (title.equals("Eventos sociales")) {
+            icon = R.drawable.event
+        } else if (title.equals("Ayuda")) {
+            icon = R.drawable.help
+        } else if (title.equals("Consejos")) {
+            icon = R.drawable.advice
+        } else if (title.equals("Departamentos/Casas en renta")) {
+            icon = R.drawable.rent
         }
 
         botonEnviarComentario.setOnClickListener {
             val comentario = hashMapOf(
                 "autor" to usuario.currentUser?.displayName,
                 "comentarios" to txtComentario.text.toString(),
-                "fechaHora" to LocalDateTime.now()
+                "fechaHora" to LocalDateTime.now(),
+                "tituloPost" to tv_titulo_publicacion_detalle.text.toString()
             )
 
             storage.collection("comentario")
@@ -63,6 +84,12 @@ class detallePost : AppCompatActivity() {
                 .addOnSuccessListener {
                     Toast.makeText(this, "Comentario agregado correctamente", Toast.LENGTH_SHORT)
                         .show()
+
+                    agregarPublicaciones(title)
+                    adaptador = AdaptadorComentarios(this, comentarios)
+                    listaComentarios.adapter = adaptador
+                    txtComentario.setText("")
+
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "Error: intente de nuevo", Toast.LENGTH_SHORT).show()
@@ -75,26 +102,31 @@ class detallePost : AppCompatActivity() {
         }
 
         backMenu.setOnClickListener {
-            var intent: Intent = Intent(this, ForumActivity::class.java)
+            var intent: Intent = Intent(this, ForumPosts::class.java)
+            intent.putExtra("title", title)
+            intent.putExtra("icon", icon)
             startActivity(intent)
         }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun agregarPublicaciones(contenido: String) {
+    fun agregarPublicaciones(tituloPost: String) {
         comentarios = ArrayList()
         storage = FirebaseFirestore.getInstance()
 
         storage.collection("comentario")
-            .whereEqualTo("comentarios", contenido)
+            .whereEqualTo("tituloPost", tituloPost)
             .get()
             .addOnSuccessListener {
                 it.forEach { it ->
-                    var tComentarios: ArrayList<Comentario> =
-                        it.get("comentarios") as ArrayList<Comentario>
 
-                    /** Codigo para agregar comentario **/
+                    var comentario: Comentario = Comentario(
+                        it.id,
+                        it.getString("comentarios")!!,
+                        it.getString("tituloPost")!!
+                    )
 
+                    comentarios.add(comentario)
                 }
                 adaptador = AdaptadorComentarios(this, comentarios)
                 listaComentarios.adapter = adaptador
@@ -119,10 +151,8 @@ class detallePost : AppCompatActivity() {
             var inflator = LayoutInflater.from(contexto)
             var vista = inflator.inflate(R.layout.publicacion_view, null)
 
-            var titulo = vista.findViewById(R.id.tv_titulo_publicacion) as TextView
             var contenido = vista.findViewById(R.id.tvContenidoPost) as TextView
 
-            titulo.setText(coment.autor.nombre)
             contenido.setText(coment.contenido)
 
             return vista

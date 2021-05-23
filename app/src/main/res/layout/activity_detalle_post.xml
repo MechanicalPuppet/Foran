@@ -69,22 +69,45 @@
 
             <TextView
                 android:id="@+id/contenidoPostDetalle"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:textSize="18dp"
                 android:text="Este es el contenido de la publicacion"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textSize="18dp"
+                android:text="_____________________________________"
+                android:textColor="@color/white" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textSize="18dp"
+                android:text="Seccion de comentarios:"
+                android:textStyle="bold"
                 android:textColor="@color/white" />
         </LinearLayout>
 
         <ListView
+
             android:id="@+id/listaComentarios"
             android:layout_width="wrap_content"
-            android:layout_height="450dp"
+            android:layout_height="420dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="15dp" />
+            android:layout_marginRight="15dp"
+            />
 
         <GridLayout
             android:layout_width="wrap_content"

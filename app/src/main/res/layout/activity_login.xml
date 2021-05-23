@@ -56,9 +56,11 @@
             android:layout_height="39dp"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
+            android:textColor="@color/black"
             android:background="@drawable/round_editext"
             android:textAlignment="center"
             android:hint="Correo"
+            android:textColorHint="@color/gris"
             android:textSize="20dp" />
 
         <EditText
@@ -67,11 +69,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:textAlignment="center"
+            android:fontFamily="sans-serif-black"
             android:background="@drawable/round_editext"
             android:ems="10"
             android:layout_gravity="center"
+            android:textColorHint="@color/gris"
+            android:textColor="@color/black"
             android:hint="Contraseña"
-            android:textSize="25dp" />
+            android:textSize="20dp" />
         <TextView
             android:id="@+id/tvOlvideContraseña"
             android:layout_width="wrap_content"
