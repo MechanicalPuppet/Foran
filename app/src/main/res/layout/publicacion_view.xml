@@ -20,6 +20,14 @@
         >
 
         <TextView
+            android:id="@+id/tvEmailPublicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="jbrandonhdez@gmail.com: "
+            android:textSize="17dp"
+            android:textColor="@color/black"
+            />
+        <TextView
             android:id="@+id/tv_titulo_publicacion"
             android:layout_width="wrap_content"
             android:layout_height="20sp"

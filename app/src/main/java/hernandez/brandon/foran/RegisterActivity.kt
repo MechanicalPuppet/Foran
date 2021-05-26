@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    var nombre: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -28,7 +29,7 @@ class RegisterActivity : AppCompatActivity() {
 
     }
 
-    private fun registrarFirebase(email: String, password: String){
+    private fun registrarFirebase(email: String, password: String, usuario: String){
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -36,10 +37,12 @@ class RegisterActivity : AppCompatActivity() {
                     //Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
 
+
                     //INSERCION DE BD
 
                         Toast.makeText(baseContext, "${user?.email}Se ha creado correctamente", Toast.LENGTH_SHORT).show()
                     var intent: Intent = Intent(this, MenuActivity::class.java)
+                    intent.putExtra("nombre", usuario)
                     startActivity(intent)
                 } else {
                     // If sign in fails, display a message to the user.
@@ -59,7 +62,8 @@ class RegisterActivity : AppCompatActivity() {
         var contra1: String = txtContrasena.text.toString()
 
         if(!correo.isNullOrBlank() && !contra1.isNullOrBlank()){
-                registrarFirebase(correo, contra1)
+                registrarFirebase(correo, contra1, txtUsuario.toString())
+
         }else{
             Toast.makeText(this, "Ingresar datos",
                 Toast.LENGTH_SHORT).show()

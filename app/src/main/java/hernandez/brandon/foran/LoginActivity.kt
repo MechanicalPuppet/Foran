@@ -22,8 +22,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btnIniciarSesion.setOnClickListener {
-            var intent: Intent = Intent(this, MenuActivity::class.java)
-            startActivity(intent)
+           valida_ingreso()
         }
 
         tvRegistrarme.setOnClickListener {

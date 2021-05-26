@@ -61,6 +61,7 @@ class CrearPublicacionActivity : AppCompatActivity() {
         btnPublicar.setOnClickListener {
             val publicacion = hashMapOf(
                 "autor" to usuario.currentUser?.displayName,
+                "email" to usuario.currentUser?.email,
                 "categoria" to title,
                 "comentarios" to ArrayList<Comentario>(),
                 "contenido" to et_contenido.text.toString(),

@@ -73,7 +73,7 @@ class detallePost : AppCompatActivity() {
 
         botonEnviarComentario.setOnClickListener {
             val comentario = hashMapOf(
-                "autor" to usuario.currentUser?.displayName,
+                "email" to usuario.currentUser?.email,
                 "comentarios" to txtComentario.text.toString(),
                 "fechaHora" to LocalDateTime.now(),
                 "tituloPost" to tv_titulo_publicacion_detalle.text.toString()
@@ -122,6 +122,7 @@ class detallePost : AppCompatActivity() {
 
                     var comentario: Comentario = Comentario(
                         it.id,
+                        it.getString("email")!!,
                         it.getString("comentarios")!!,
                         it.getString("tituloPost")!!
                     )
@@ -150,9 +151,10 @@ class detallePost : AppCompatActivity() {
             var coment = comentarios[position]
             var inflator = LayoutInflater.from(contexto)
             var vista = inflator.inflate(R.layout.publicacion_view, null)
-
+            var autor = vista.findViewById(R.id.tvEmailPublicacion) as TextView
             var contenido = vista.findViewById(R.id.tvContenidoPost) as TextView
 
+            autor.setText(coment.email)
             contenido.setText(coment.contenido)
 
             return vista

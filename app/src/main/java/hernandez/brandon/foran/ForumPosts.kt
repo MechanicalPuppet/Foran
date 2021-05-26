@@ -115,6 +115,7 @@ class ForumPosts : AppCompatActivity() {
                     allPubs.add(
                         Publicacion(
                             it.id,
+                            it.getString("email")!!,
                             it.getString("titulo")!!,
                             it.getString("contenido")!!,
                             it.getString("categoria")!!,
@@ -158,11 +159,11 @@ class ForumPosts : AppCompatActivity() {
             var publi = publicaciones[position]
             var inflator = LayoutInflater.from(contexto)
             var vista = inflator.inflate(R.layout.publicacion_view, null)
-
             var imagen = vista.findViewById(R.id.imgfotoPerfilPublicacion) as ImageView
             var titulo = vista.findViewById(R.id.tv_titulo_publicacion) as TextView
             var contenido = vista.findViewById(R.id.tvContenidoPost) as TextView
-
+            var email = vista.findViewById(R.id.tvEmailPublicacion) as TextView
+            email.setText(publi.nombre)
             titulo.setText(publi.titulo)
             contenido.setText(publi.contenido)
 
