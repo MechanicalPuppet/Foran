@@ -21,24 +21,26 @@
             android:id="@+id/backMenu"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/abc_vector_test"
             android:clickable="true"
-            android:focusable="true"/>
+            android:focusable="true" />
 
         <ImageView
+            android:id="@+id/fotoPerfil"
             android:layout_width="190dp"
             android:layout_height="157dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/icono" />
 
-        <ImageView
+        <Button
+            android:id="@+id/btnElegirImagen"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginTop="-20dp"
             android:layout_marginLeft="240dp"
-            android:src="@drawable/round_gray"/>
+            android:layout_marginTop="-20dp"
+            android:background="@drawable/round_gray" />
 
         <TextView
             android:layout_width="match_parent"
@@ -80,8 +82,8 @@
             android:background="@drawable/round_editext"
             android:fontFamily="sans-serif-black"
             android:hint="Nombre"
-            android:textColor="@color/gris"
             android:textAlignment="center"
+            android:textColor="@color/gris"
             android:textSize="20dp" />
 
         <EditText
@@ -93,8 +95,8 @@
             android:background="@drawable/round_editext"
             android:fontFamily="sans-serif-black"
             android:hint="Info"
-            android:textColor="@color/gris"
             android:textAlignment="center"
+            android:textColor="@color/gris"
             android:textSize="20dp" />
 
 
@@ -107,8 +109,8 @@
             android:background="@drawable/round_editext"
             android:fontFamily="sans-serif-black"
             android:text="Guardar"
-            android:textSize="12sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/btnCerrarSesion"
@@ -119,8 +121,8 @@
             android:background="@drawable/round_editext"
             android:fontFamily="sans-serif-black"
             android:text="Cerrar Sesion"
-            android:textSize="12sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/btnEliminarCuenta"
@@ -131,8 +133,8 @@
             android:background="@drawable/round_editext"
             android:fontFamily="sans-serif-black"
             android:text="Eliminar Cuenta"
-            android:textSize="12sp"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
