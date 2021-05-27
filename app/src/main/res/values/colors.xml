@@ -13,4 +13,8 @@
     <color name="azul">#0000ff</color>
     <color name="rositaOscurito">#da6c8f</color>
     <color name="verdeMenosLimoncito">#b1c973</color>
+    <color name="gradientRosa1">#D776BB</color>
+    <color name="gradientRosa2">#EC635D</color>
+    <color name="gradientVerde1">#24B253</color>
+    <color name="gradientVerde2">#A1A150</color>
 </resources>

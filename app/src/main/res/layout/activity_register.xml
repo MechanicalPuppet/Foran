@@ -46,7 +46,11 @@
             android:text="Crea tu cuenta"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+
+            />
+
+
 
         <EditText
             android:id="@+id/txtUsuarioRegister"

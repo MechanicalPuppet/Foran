@@ -121,7 +121,7 @@
         android:layout_height="300dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:background="@drawable/second_gradient"
+        android:background="@drawable/gradient_soriana"
         android:orientation="vertical">
 
         <ImageView

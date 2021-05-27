@@ -47,7 +47,7 @@
         android:layout_width="330dp"
         android:layout_height="651dp"
         android:layout_gravity="center"
-        android:background="@drawable/gradient"
+        android:background="@drawable/gradient_recetas"
         android:orientation="vertical">
 
         <TextView

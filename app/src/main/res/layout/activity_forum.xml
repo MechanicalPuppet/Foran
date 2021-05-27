@@ -46,7 +46,7 @@
         android:layout_width="330dp"
         android:layout_height="600dp"
         android:layout_gravity="center"
-        android:background="@drawable/second_gradient"
+        android:background="@drawable/gradient_foro"
         android:orientation="vertical">
 
         <TextView
